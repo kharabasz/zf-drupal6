@@ -19,12 +19,7 @@ Allows you further use of the http://drupal.org/project/zend contributed module 
 function module_init()
 {
     global $db_url;
-
-    // initialize Zend Autoloader
-    require('Zend/Loader/Autoloader.php');
-    $autoloader = Zend_Loader_Autoloader::getInstance();
-    $autoloader->registerNamespace('My_');
-
+    
     // initialize Zend Db
     $options = parse_url( $db_url );
     $db = Zend_Db::factory('Drupal', array(
